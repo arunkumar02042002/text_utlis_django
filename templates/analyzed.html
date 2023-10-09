@@ -1,0 +1,94 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>{{Task}}</div>
+    <div>{{Text}}</div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>Document</title>
+    <style>
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 10vh;
+            background: #eae2e2;
+        }
+
+        .header p{
+            color: #e74c3c;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 300;
+            font-size: 40px;
+            margin-bottom: 0%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header"><p>Text Utility Website</p></div>
+
+    <div class="box w-100 p-3 d-inline-flex flex-column justify-content-center align-items-center">
+        <div class="container m-2">
+            <h1 style="margin-bottom: 10px;">Your Output:</h1>
+            {% if task == 'removespace' %}
+            <div class="card">
+                <div class="card-body">
+                  <h2>Spaces from the text has been removed.</h2>
+                  {{text}}
+                </div>
+            </div>
+
+            {% elif task == 'removepunctuations' %}
+                <div class="card">
+                    <div class="card-body">
+                    <h2>Punctuations from the text has been removed.</h2>
+                    {{text}}
+                    </div>
+                </div>
+
+            {% elif task == 'analyze' %}
+                <h2>Alphabet Frequency Report:</h2>
+                <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Alphabet</th>
+                        <th scope="col">Frequency</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for i, v in text.items %}
+                            <tr>
+                                <th scope="row">{{forloop.counter}}</th>
+                                <td>{{i}}</td>
+                                <td>{{v}}</td>
+                            </tr>
+                        {%endfor%}
+                        </tbody>
+                </table>
+
+            {% else %}
+                <div class="card">
+                    <div class="card-body">
+                        <h2>I Did Nothing :)</h2>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "text-utils-django"
+version = "0.1.0"
+description = "\"This is an simple django projects that lets to learn about 'request and response cycle', 'views', 'urls', 'working with forms', and 'manipulate text data'.\""
+authors = ["arunkumar02042002 <arun.kumar.2403gg@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+asgiref = "3.7.2"
+beautifulsoup4 = "4.12.2"
+django = "4.2.5"
+django-bootstrap-v5 = "1.0.11"
+soupsieve = "2.5"
+sqlparse = "0.4.4"
+tzdata = "2023.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

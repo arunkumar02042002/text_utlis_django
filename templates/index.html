@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <title>Text Utlis Website</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 10vh;
+            background: #eae2e2;
+        }
+
+        .header p{
+            color: #e74c3c;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 300;
+            font-size: 40px;
+            margin-bottom: 0%;
+        }
+
+        .box{
+            height: 90vh;
+            background-image: linear-gradient(to right, rgba(0, 255, 255), rgb(16, 30, 95));
+        }
+    </style>
+</head>
+<body>
+    <div class="header"><p>Text Utility Website</p></div>
+    <div class="box w-100 p-3 d-inline-flex flex-column justify-content-center align-items-center">
+        <div class="container m-2">
+            <h1 style="margin-bottom: 10px;">Welcome to Text World</h1>
+            <form action="analyzeText" method="GET">
+
+                <div class="form-group">
+                    <label for="Textarea">Enter Your Text:</label>
+                    <textarea class="form-control w-70" id="Textarea" placeholder="ex: A crazy text!" rows="8" name="text" required></textarea>
+                </div>
+
+                <p class="pt-2">Which task you wanna perform?</p>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="task" value="removepunctuations" id="option1"> Remove Punctuations
+                    </label>
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="task" value="removespace" id="option2"> Remove Spaces
+                    </label>
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="task" value="analyze" id="option3"> Analyze My Text
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="task" value="donothing" id="option3" checked> Do Nothing
+                    </label>
+                </div>
+                <button class = "btn btn-primary" type="submit">submit</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
